@@ -1,0 +1,30 @@
+  
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  .hexagon {
+    display: grid;
+    place-items: center;
+    width: 55px; 
+    height: 65px;
+    margin: 0 auto;
+    background-color: #fb8022; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(-30deg);
+  }
+
+  .hexagonB {
+    display: grid;
+    place-items: center;
+    width: 31px; 
+    height: 37px;
+    background-color: #880d2a; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(-31deg);
+  }
+
+  .heading{
+    transform: rotate(28deg);
+  }
