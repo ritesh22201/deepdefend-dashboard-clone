@@ -103,6 +103,6 @@ export function LineGraph() {
         ],
     };
 
-    return <Line width={'600%'} options={options} data={data} />;
+    return <Line width={window.innerWidth >= 1500 ? '800%' : '600%'} options={options} data={data} />;
 }
 

@@ -4,6 +4,43 @@
     padding: 0;
   }
 
+  .App{
+    display: flex;
+    position: relative;
+  }
+
+  .sidebar > *{
+    cursor: pointer;
+  }
+
+  .navigate {
+    font-size: 30px;
+    background-color: #9F7AEA;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .btn{
+    padding: 0 3px;
+    border-radius: 3px;
+    color: #E2E8F0;
+    border: 1px solid rgb(29, 28, 28);
+  }
+
+  .btn-color{
+    background-color: rgba(60, 60, 241, 0.5);
+    margin-top: 10px; 
+  }
+
+  .btn-color2{
+    background-color: rgb(156, 66, 33, 0.5);
+    margin-top: 5px;
+  }
+
+  .leftArrow:hover{
+    cursor: pointer;
+  }
+
   .hexagon {
     display: grid;
     place-items: center;

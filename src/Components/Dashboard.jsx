@@ -3,14 +3,8 @@ import {
     Box, Flex, VStack, Heading, Text, Select, Button, Progress, Image
 }
     from '@chakra-ui/react';
-import { GiSpeedometer } from 'react-icons/gi';
-import { PiArrowFatRightFill, PiDotsSixBold } from 'react-icons/pi';
-import { CgNotes } from 'react-icons/cg';
-import { FaMizuni, FaXmark } from 'react-icons/fa6';
-import { RxDragHandleDots2 } from 'react-icons/rx';
-import { FiSettings } from 'react-icons/fi';
+import { PiArrowFatRightFill } from 'react-icons/pi';
 import { TfiBoltAlt } from 'react-icons/tfi';
-import { AiOutlineFileSearch, AiOutlineQuestionCircle } from 'react-icons/ai';
 import { LineGraph } from './LineGraph';
 import { MdWindow } from 'react-icons/md';
 import Doughnut from './Doughnut Chart/Doughnut';
@@ -19,20 +13,9 @@ import { TbBandageOff } from 'react-icons/tb';
 
 const Dashboard = () => {
     return (
-        <Box bg={'#000'} minH={'100vh'}>
+        <Box minH={'100vh'} position={'absolute'} right={'0'} bg={'#15191c'} p={'5px 15px'} w={'94%'}>
             <Flex position={'relative'}>
-                <VStack display={{base : 'none', sm : 'none', md : 'flex', lg : 'flex', xl : 'flex', '2xl' : 'flex'}} position={'fixed'} zIndex={'overlay'} left={'0'} p={'10px 0'} justifyContent={'space-between'} h={'100vh'} fontSize={'20px'} bg={'#171717'} w={'6%'} alignItems={'center'} color={'gray.200'}>
-                    <GiSpeedometer style={{ color: '#9F7AEA' }} />
-                    <PiDotsSixBold style={{ fontWeight: 'bolder' }} />
-                    <CgNotes />
-                    <FaXmark />
-                    <FaMizuni />
-                    <RxDragHandleDots2 />
-                    <FiSettings />
-                    <AiOutlineFileSearch />
-                    <AiOutlineQuestionCircle style={{ marginTop: '120px' }} />
-                </VStack>
-                <Box position={'absolute'} left={'6%'} bg={'#15191c'} p={'5px 15px'} w={'94%'}>
+                <Box w={'100%'}>
 
                     {/*  Section 1 code starts from here */}
 
@@ -60,7 +43,7 @@ const Dashboard = () => {
                                 <Text>Log4Shell (CVE-2021-44228) | Risk from...</Text>
                             </Flex>
                         </Box>
-                        <Box w={'66%'} h={'160px'}>
+                        <Box h={'160px'}>
                             <LineGraph />
                         </Box>
                     </Flex>
@@ -116,8 +99,8 @@ const Dashboard = () => {
                                             <Button color={'gray.200'} fontSize={'12px'} _hover={'none'} _active={'none'} variant={'ghost'}>View all</Button>
                                         </Flex>
                                     </Box>
-                                    <Flex bg={'#23262b'} justifyContent={'space-between'} alignItems={'center'} p={'15px 15px 14px 15px'}>
-                                        <Box color={'gray.200'} lineHeight={'22px'}>
+                                    <Flex gap={'15px'} bg={'#23262b'} justifyContent={'space-between'} alignItems={'center'} p={'15px 15px 14px 15px'}>
+                                        <Box w={{base : '75%', sm : '75%', md : '70%', lg : '62%', xl : '76%', '2xl' : '76%'}} color={'gray.200'} lineHeight={'22px'}>
                                             <Text fontSize={'12px'}>Critical assets compromised by attack vectors with the lowest average complexity</Text>
                                             <Flex color={'gray.300'} mt={'15px'} justifyContent={'space-between'}>
                                                 <Heading fontSize={'13px'}>Critical asset name</Heading>
@@ -187,8 +170,8 @@ const Dashboard = () => {
                     {/* Section 3 starts from here */}
 
                     <section>
-                        <Flex flexDirection={{base : 'column', sm : 'column', md : 'column', lg : 'row', xl : 'row', '2xl' : 'row'}} pt={'15px'} gap={'18px'}>
-                            <Box w={{base : '100%', sm : '100%', md : '100%', lg : '43%', xl : '43%', '2xl' : '43%'}}>
+                        <Flex flexDirection={{base : 'column', sm : 'column', md : 'column', lg : 'row', xl : 'row', '2xl' : 'row'}} pt={'15px'} gap={'15px'}>
+                            <Box w={{base : '100%', sm : '100%', md : '100%', lg : '36%', xl : '40%', '2xl' : '53%'}}>
                                 <Box color={'gray.300'}>
                                     <Flex alignItems={'center'} fontSize={'15px'} gap={'10px'}>
                                         <Text>Top check points</Text>
@@ -237,19 +220,19 @@ const Dashboard = () => {
                                         </Flex>
                                     </Box>
                                     <Box>
-                                        <Image src={honeycomb} />
+                                        <Image w={{base : '200px', sm : '200px', md : '200px', lg : '240px', xl : '240px', '2xl' : '200px'}} src={honeycomb} />
                                     </Box>
                                 </Flex>
                             </Box>
-                            <Box w={{base : '100%', sm : '100%', md : '100%', lg : '64%', xl : '64%', '2xl' : '64%'}}>
+                            <Box w={{base : '100%', sm : '100%', md : '100%', lg : '64%', xl : '60%', '2xl' : '47%'}}>
                                 <Box color={'gray.300'}>
                                     <Flex alignItems={'center'} fontSize={'15px'} gap={'10px'}>
                                         <Text>Top impacting attack techniques</Text>
                                         <Button color={'gray.200'} fontSize={'12px'} _hover={'none'} _active={'none'} variant={'ghost'}>View all</Button>
                                     </Flex>
                                 </Box>
-                                <Flex gap={'10px'}>
-                                    <Box bg={'#23262b'} p={'10px'} color={'gray.200'}>
+                                <Flex w={'100%'} gap={'10px'} justifyContent={'space-between'}>
+                                    <Box p={{base : '10px', sm : '10px', md : '10px', lg : '10px', xl : '10px', '2xl' : '10px 10px 27px 10px'}} bg={'#23262b'} color={'gray.200'}>
                                         <Heading fontSize={'13px'} color={'gray.200'}>Local Credentials</Heading>
                                         <Flex m={'10px 0 9px 0'} alignItems={'center'} gap={'10px'}>
                                             <Text fontSize={'12px'}>Complexity</Text>
@@ -263,7 +246,7 @@ const Dashboard = () => {
                                             </Flex>
                                         </Flex>
                                         <Flex alignItems={'center'} gap={'10px'}>
-                                            <Text fontSize={'12px'}>Complexity</Text>
+                                            <Text fontSize={'12px'}>Severity</Text>
                                             <Flex justifyContent={'space-between'} gap={'5px'}>
                                                 <Text display={'flex'} alignItems={'center'} fontSize={'12px'} gap={'2px'}>
                                                     <Progress bg={'#353f4b'} w={'10px'} colorScheme='yellow' size='md' value={100} />
@@ -273,10 +256,10 @@ const Dashboard = () => {
                                                 </Text>
                                             </Flex>
                                         </Flex>
-                                        <Flex m='10px 0' fontSize={'13px'} color={'gray.200'} gap={'10px'} textAlign={'center'}>
+                                        <Flex m='10px 0' fontSize={'12px'} color={'gray.200'} gap={'8px'} textAlign={'center'}>
                                             <Box>
                                                 <Heading fontSize={'19px'}>10</Heading>
-                                                <Text>Affected entities</Text>
+                                                <Text fontSize={'11px'}>Affected entities</Text>
                                             </Box>
                                             <Box color={'#cd1541'}>
                                                 <Heading fontSize={'19px'}>45%</Heading>
@@ -302,7 +285,7 @@ const Dashboard = () => {
                                             </Flex>
                                         </Flex>
                                         <Flex alignItems={'center'} gap={'10px'}>
-                                            <Text fontSize={'12px'}>Complexity</Text>
+                                            <Text fontSize={'12px'}>Severity</Text>
                                             <Flex justifyContent={'space-between'} gap={'5px'}>
                                                 <Text display={'flex'} alignItems={'center'} fontSize={'12px'} gap={'2px'}>
                                                     <Progress bg={'#353f4b'} w={'10px'} colorScheme='yellow' size='md' value={100} />
@@ -315,7 +298,7 @@ const Dashboard = () => {
                                         <Flex m='10px 0' fontSize={'13px'} color={'gray.200'} gap={'7px'} textAlign={'center'}>
                                             <Box>
                                                 <Heading fontSize={'19px'}>10</Heading>
-                                                <Text>Affected entities</Text>
+                                                <Text fontSize={'12px'}>Affected entities</Text>
                                             </Box>
                                             <Box color={'#cd1541'}>
                                                 <Heading fontSize={'19px'}>45%</Heading>
@@ -341,7 +324,7 @@ const Dashboard = () => {
                                             </Flex>
                                         </Flex>
                                         <Flex alignItems={'center'} gap={'10px'}>
-                                            <Text fontSize={'12px'}>Complexity</Text>
+                                            <Text fontSize={'12px'}>Severity</Text>
                                             <Flex justifyContent={'space-between'} gap={'5px'}>
                                                 <Text display={'flex'} alignItems={'center'} fontSize={'12px'} gap={'2px'}>
                                                     <Progress bg={'#353f4b'} w={'10px'} colorScheme='yellow' size='md' value={100} />
@@ -354,7 +337,7 @@ const Dashboard = () => {
                                         <Flex m='10px 0' fontSize={'13px'} color={'gray.200'} gap={'10px'} textAlign={'center'}>
                                             <Box>
                                                 <Heading fontSize={'19px'}>10</Heading>
-                                                <Text>Affected entities</Text>
+                                                <Text fontSize={'12px'}>Affected entities</Text>
                                             </Box>
                                             <Box color={'#cd1541'}>
                                                 <Heading fontSize={'19px'}>45%</Heading>
