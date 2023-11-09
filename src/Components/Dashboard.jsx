@@ -1,18 +1,10 @@
 import React from 'react';
 import {
-    Box, Flex, VStack, Heading, Text, Select, Button, Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
+    Box, Flex, VStack, Heading, Text, Select, Button, Progress, Image
 }
-from '@chakra-ui/react';
+    from '@chakra-ui/react';
 import { GiSpeedometer } from 'react-icons/gi';
-import { PiDotsSixBold } from 'react-icons/pi';
+import { PiArrowFatRightFill, PiDotsSixBold } from 'react-icons/pi';
 import { CgNotes } from 'react-icons/cg';
 import { FaMizuni, FaXmark } from 'react-icons/fa6';
 import { RxDragHandleDots2 } from 'react-icons/rx';
@@ -20,6 +12,9 @@ import { FiSettings } from 'react-icons/fi';
 import { TfiBoltAlt } from 'react-icons/tfi';
 import { AiOutlineFileSearch, AiOutlineQuestionCircle } from 'react-icons/ai';
 import { LineGraph } from './LineGraph';
+import { MdWindow } from 'react-icons/md';
+import Doughnut from './Doughnut Chart/Doughnut';
+import honeycomb from '../Assets/honeycomb.png';
 
 const Dashboard = () => {
     return (
@@ -82,7 +77,7 @@ const Dashboard = () => {
                                 </Select>
                             </Flex>
                             <Flex gap={'15px'}>
-                                <Box w={'50%'}>
+                                <Box w={'45%'}>
                                     <Box color={'gray.300'}>
                                         <Flex alignItems={'center'} fontSize={'15px'} gap={'10px'}>
                                             <Text>Scenarios at high risk</Text>
@@ -113,22 +108,133 @@ const Dashboard = () => {
                                         </Flex>
                                     </Flex>
                                 </Box>
-                                <Box w={'50%'}>
+                                <Box w={'55%'}>
                                     <Box color={'gray.300'}>
                                         <Flex alignItems={'center'} fontSize={'15px'} gap={'10px'}>
                                             <Text>Critical assets at risk</Text>
                                             <Button color={'gray.200'} fontSize={'12px'} _hover={'none'} _active={'none'} variant={'ghost'}>View all</Button>
                                         </Flex>
                                     </Box>
-                                    <Flex>
+                                    <Flex bg={'#23262b'} justifyContent={'space-between'} alignItems={'center'} p={'15px 15px 14px 15px'}>
+                                        <Box color={'gray.200'} lineHeight={'22px'}>
+                                            <Text fontSize={'12px'}>Critical assets compromised by attack vectors with the lowest average complexity</Text>
+                                            <Flex color={'gray.300'} mt={'15px'} justifyContent={'space-between'}>
+                                                <Heading fontSize={'13px'}>Critical asset name</Heading>
+                                                <Flex gap={'40px'}>
+                                                    <Heading fontSize={'13px'}>Avg Complexi...</Heading>
+                                                    <Heading fontSize={'13px'}>Trend</Heading>
+                                                </Flex>
+                                            </Flex>
+                                            <hr style={{ marginTop: '5px' }} />
+                                            <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                                <Flex w={'38%'} justifyContent={'space-between'}>
+                                                    <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                        <Text mr={'6px'}>2</Text>
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={100} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Text ml={'6px'} color='#cd1541'>Low</Text>
+                                                    </Text>
+                                                    <Text fontSize={'14px'} mt={'5px'} color={'white'}><PiArrowFatRightFill /></Text>
+                                                </Flex>
+                                            </Flex>
+                                            <hr style={{ marginTop: '5px' }} />
+                                            <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                                <Flex w={'38%'} justifyContent={'space-between'}>
+                                                    <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                        <Text mr={'6px'}>2</Text>
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={100} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Text ml={'6px'} color='#cd1541'>Low</Text>
+                                                    </Text>
+                                                    <Text fontSize={'14px'} mt={'5px'} color={'white'}><PiArrowFatRightFill /></Text>
+                                                </Flex>
+                                            </Flex>
+                                            <hr style={{ marginTop: '5px' }} />
+                                            <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                                <Flex w={'38%'} justifyContent={'space-between'}>
+                                                    <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                        <Text mr={'6px'}>2</Text>
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={100} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Progress w={'10px'} colorScheme='none' color='#cd1541' bg={'#cd1541'} size='md' value={0} />
+                                                        <Text ml={'6px'} color='#cd1541'>Low</Text>
+                                                    </Text>
+                                                    <Text fontSize={'14px'} mt={'5px'} color={'white'}><PiArrowFatRightFill /></Text>
+                                                </Flex>
+                                            </Flex>
+                                        </Box>
                                         <Box>
-                                            <Text color={'gray.200'} fontSize={'13px'}>Critical assets compromised by attack vectors with the lowest average complexity</Text>
-
+                                            <Doughnut />
                                         </Box>
                                     </Flex>
                                 </Box>
                             </Flex>
                         </Box>
+                    </section>
+
+                    {/* Section 3 starts from here */}
+
+                    <section>
+                        <Flex pt={'15px'}>
+                            <Box w={'55%'}>
+                                <Box color={'gray.300'}>
+                                    <Flex alignItems={'center'} fontSize={'15px'} gap={'10px'}>
+                                        <Text>Top check points</Text>
+                                        <Button color={'gray.200'} fontSize={'12px'} _hover={'none'} _active={'none'} variant={'ghost'}>View all</Button>
+                                    </Flex>
+                                </Box>
+                                <Flex bg={'#23262b'} justifyContent={'space-between'} alignItems={'center'} p={'15px 15px 14px 15px'}>
+                                    <Box color={'gray.200'} lineHeight={'22px'}>
+                                        <Text fontSize={'12px'}>Top 3 Entities which are part of the most attack vectors to critical assets that affect 43.1% of critical assets (267/619)</Text>
+                                        <Flex color={'gray.300'} mt={'15px'} justifyContent={'space-between'}>
+                                            <Heading fontSize={'13px'}>Entity name</Heading>
+                                            <Flex gap={'40px'}>
+                                                <Heading fontSize={'13px'}>Critical as...</Heading>
+                                                <Heading fontSize={'13px'}>Trend</Heading>
+                                            </Flex>
+                                        </Flex>
+                                        <hr style={{ marginTop: '5px' }} />
+                                        <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                            <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                            <Flex w={'38%'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                    <Text mr={'6px'}>233</Text>
+                                                    <Progress bg={'#353f4b'} borderRadius={'9px'} w={'85px'} colorScheme='red' size='md' value={28} />
+                                                </Text>
+                                            </Flex>
+                                        </Flex>
+                                        <hr style={{ marginTop: '5px' }} />
+                                        <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                            <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                            <Flex w={'38%'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                    <Text mr={'6px'}>141</Text>
+                                                    <Progress bg={'#353f4b'} borderRadius={'9px'} w={'85px'} colorScheme='red' size='md' value={15} />
+                                                </Text>
+                                            </Flex>
+                                        </Flex>
+                                        <hr style={{ marginTop: '5px' }} />
+                                        <Flex color={'gray.400'} mt={'5px'} alignItems={'center'} justifyContent={'space-between'}>
+                                            <Text display={'flex'} alignItems={'center'} gap={'5px'} fontSize={'13px'}><MdWindow />Raymond Butcher</Text>
+                                            <Flex w={'38%'} justifyContent={'space-between'}>
+                                                <Text display={'flex'} alignItems={'center'} fontSize={'13px'} gap={'2px'}>
+                                                    <Text mr={'6px'}>64</Text>
+                                                    <Progress bg={'#353f4b'} borderRadius={'9px'} w={'85px'} colorScheme='red' size='md' value={9} />
+                                                </Text>
+                                            </Flex>
+                                        </Flex>
+                                    </Box>
+                                    <Box>
+                                        <Image src={honeycomb}/>
+                                    </Box>
+                                </Flex>
+                            </Box>
+                        </Flex>
                     </section>
                 </Box>
             </Flex>
